@@ -1,0 +1,768 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom font face declarations */
+@font-face {
+  font-family: 'Brave Eighty One Outline Italic';
+  src: url('/BRAVEEightyone-OutlineItalic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Lubalin Graph';
+  src: url('/itc-lubalin-graph-std-extra-light.ttf') format('truetype');
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Lubalin Graph';
+  src: url('/itc-lubalin-graph-std-extra-light-oblique.ttf') format('truetype');
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Lubalin Graph';
+  src: url('/lubalin-graph-regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Lubalin Graph';
+  src: url('/lubalin-graph-italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Lubalin Graph';
+  src: url('/itc-lubalin-graph-std-medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Lubalin Graph';
+  src: url('/itc-lubalin-graph-std-medium-oblique.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Lubalin Graph';
+  src: url('/itc-lubalin-graph-std-bold-oblique.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Lubalin Graph Condensed';
+  src: url('/itc-lubalin-graph-std-book-condensed.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'ITC Lubalin Graph Condensed';
+  src: url('/itc-lubalin-graph-std-medium-condensed.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Custom font classes */
+.font-brave-outline {
+  font-family: 'Brave Eighty One Outline Italic', cursive;
+  font-style: italic;
+}
+
+.font-lubalin {
+  font-family: 'ITC Lubalin Graph', Georgia, serif;
+}
+
+.font-lubalin-condensed {
+  font-family: 'ITC Lubalin Graph Condensed', 'ITC Lubalin Graph', Georgia, serif;
+}
+
+/* Base typography */
+body {
+  font-family: 'ITC Lubalin Graph', Georgia, serif;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden; /* Prevent horizontal scroll on body */
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden; /* Prevent horizontal scroll on html */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'ITC Lubalin Graph', Georgia, serif;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #eb3d92;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d13582;
+}
+
+/* Enhanced animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Hover effects */
+.hover-lift {
+  transition: transform 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-5px);
+}
+
+/* Loading animation for images */
+img {
+  transition: opacity 0.3s ease;
+}
+
+img:not([src]) {
+  opacity: 0;
+}
+
+/* Enhanced button animations */
+button {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  font-family: 'ITC Lubalin Graph', Georgia, serif;
+}
+
+/* Backdrop blur support */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+}
+
+/* Custom gradient overlays */
+.gradient-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(235, 61, 146, 0.1) 0%,
+    rgba(147, 51, 234, 0.1) 100%
+  );
+}
+
+/* Enhanced photo animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Glowing effect */
+@keyframes glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(235, 61, 146, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(235, 61, 146, 0.6); }
+}
+
+.glow-effect {
+  animation: glow 2s ease-in-out infinite;
+}
+
+/* Pulse animation for decorative elements */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* ANIMATED LETTER IMAGE STYLES */
+
+/* Individual animated letter images */
+.animated-letter-image {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-50px) translateY(30px) scale(0.7) rotate(-10deg);
+  animation: letter-image-slide-in 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  filter: drop-shadow(0 0 15px rgba(235, 61, 146, 0.4));
+  transition: all 0.3s ease;
+}
+
+/* Letter image slide-in animation */
+@keyframes letter-image-slide-in {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px) translateY(30px) scale(0.7) rotate(-10deg);
+    filter: blur(8px) drop-shadow(0 0 15px rgba(235, 61, 146, 0.4));
+  }
+  40% {
+    opacity: 0.6;
+    transform: translateX(8px) translateY(-8px) scale(1.1) rotate(3deg);
+    filter: blur(2px) drop-shadow(0 0 20px rgba(235, 61, 146, 0.6));
+  }
+  70% {
+    opacity: 0.9;
+    transform: translateX(-3px) translateY(3px) scale(0.95) rotate(-1deg);
+    filter: blur(1px) drop-shadow(0 0 25px rgba(235, 61, 146, 0.5));
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0) scale(1) rotate(0deg);
+    filter: blur(0) drop-shadow(0 0 20px rgba(235, 61, 146, 0.3));
+  }
+}
+
+/* Floating animation for letter images after they appear */
+@keyframes letter-image-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg) scale(1);
+  }
+  33% {
+    transform: translateY(-8px) rotate(1deg) scale(1.02);
+  }
+  66% {
+    transform: translateY(-4px) rotate(-0.5deg) scale(0.98);
+  }
+}
+
+/* Add floating animation after slide-in completes */
+.animated-letter-image {
+  animation: letter-image-slide-in 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards,
+             letter-image-float 6s ease-in-out 2.5s infinite;
+}
+
+/* Hover effects for letter images */
+.animated-letter-image:hover {
+  transform: scale(1.1) rotate(2deg);
+  filter: drop-shadow(0 0 30px rgba(235, 61, 146, 0.8));
+}
+
+/* Gradient line animation */
+@keyframes line-draw {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 1.5rem;
+    opacity: 0.9;
+  }
+}
+
+.animate-line-draw {
+  animation: line-draw 2s ease-out 0.2s forwards;
+}
+
+/* ABSTRACT ANIMATIONS */
+
+/* Swirl and Spin Animations */
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 15s linear infinite;
+}
+
+/* Path Drawing Animations */
+@keyframes draw-path {
+  0% { stroke-dasharray: 0 1000; }
+  100% { stroke-dasharray: 1000 0; }
+}
+
+@keyframes draw-path-reverse {
+  0% { stroke-dasharray: 1000 0; }
+  100% { stroke-dasharray: 0 1000; }
+}
+
+.animate-draw-path {
+  animation: draw-path 8s ease-in-out infinite alternate;
+}
+
+.animate-draw-path-reverse {
+  animation: draw-path-reverse 6s ease-in-out infinite alternate;
+}
+
+/* Floating and Bouncing */
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes float-vertical {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 4s ease-in-out infinite;
+}
+
+.animate-float-vertical {
+  animation: float-vertical 3s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Orbital Motion */
+@keyframes orbit {
+  0% { transform: rotate(0deg) translateX(20px) rotate(0deg); }
+  100% { transform: rotate(360deg) translateX(20px) rotate(-360deg); }
+}
+
+@keyframes orbit-reverse {
+  0% { transform: rotate(360deg) translateX(15px) rotate(-360deg); }
+  100% { transform: rotate(0deg) translateX(15px) rotate(0deg); }
+}
+
+.animate-orbit {
+  animation: orbit 8s linear infinite;
+}
+
+.animate-orbit-reverse {
+  animation: orbit-reverse 6s linear infinite;
+}
+
+/* Twinkling Effect */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+/* Flowing Animations */
+@keyframes flow-down {
+  0% { transform: translateY(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateY(100%); opacity: 0; }
+}
+
+@keyframes flow-right {
+  0% { transform: translateX(-100%); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+.animate-flow-down {
+  animation: flow-down 4s ease-in-out infinite;
+}
+
+.animate-flow-right {
+  animation: flow-right 5s ease-in-out infinite;
+}
+
+/* Pulse Glow Effect */
+@keyframes pulse-glow {
+  0%, 100% { 
+    opacity: 0.2; 
+    transform: scale(1); 
+  }
+  50% { 
+    opacity: 0.4; 
+    transform: scale(1.05); 
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(235, 61, 146, 0.1) 50%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Slow Pulse */
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s ease-in-out infinite;
+}
+
+/* Rhythm pulse animation for musical dots */
+@keyframes pulse-rhythm {
+  0%, 100% { 
+    opacity: 0.3; 
+    transform: scale(0.8); 
+  }
+  25% { 
+    opacity: 1; 
+    transform: scale(1.4); 
+  }
+  50% { 
+    opacity: 0.6; 
+    transform: scale(1.1); 
+  }
+  75% { 
+    opacity: 0.9; 
+    transform: scale(1.3); 
+  }
+}
+
+.animate-pulse-rhythm {
+  animation: pulse-rhythm 1.2s ease-in-out infinite;
+}
+
+/* Swirl Element Specific Styling */
+.swirl-element {
+  filter: drop-shadow(0 0 10px rgba(235, 61, 146, 0.3));
+}
+
+/* Delay classes for staggered animations */
+.delay-1000 { animation-delay: 1s; }
+.delay-2000 { animation-delay: 2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-500 { animation-delay: 0.5s; }
+
+/* TITLE ANIMATION STYLES */
+
+/* Main title entrance animation */
+@keyframes title-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+    filter: blur(10px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(10px) scale(0.95);
+    filter: blur(2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+.animate-title-entrance {
+  animation: title-entrance 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Individual letter floating animation */
+@keyframes letter-float {
+  0% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.8;
+  }
+  25% {
+    transform: translateY(-8px) rotate(1deg);
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-12px) rotate(-0.5deg);
+    opacity: 1;
+  }
+  75% {
+    transform: translateY(-6px) rotate(0.5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0px) rotate(0deg);
+    opacity: 0.9;
+  }
+}
+
+.animate-letter-float {
+  animation: letter-float 4s ease-in-out infinite;
+  display: inline-block;
+  transform-origin: center bottom;
+}
+
+/* Underline expansion animation */
+@keyframes underline-expand {
+  0% {
+    width: 0%;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    width: 100%;
+    opacity: 0.8;
+  }
+}
+
+.animate-underline-expand {
+  animation: underline-expand 2s ease-out 3s forwards;
+}
+
+/* Particle animations around title */
+@keyframes particle-float {
+  0%, 100% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0.6;
+  }
+  33% {
+    transform: translateY(-15px) translateX(5px);
+    opacity: 1;
+  }
+  66% {
+    transform: translateY(-8px) translateX(-3px);
+    opacity: 0.8;
+  }
+}
+
+.animate-particle-float {
+  animation: particle-float 6s ease-in-out infinite;
+}
+
+.animate-particle-float-delayed {
+  animation: particle-float 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+@keyframes particle-bounce {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+.animate-particle-bounce {
+  animation: particle-bounce 3s ease-in-out infinite;
+  animation-delay: 1s;
+}
+
+@keyframes particle-twinkle {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.5);
+  }
+}
+
+.animate-particle-twinkle {
+  animation: particle-twinkle 2.5s ease-in-out infinite;
+}
+
+/* Glow pulse behind text */
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(1);
+    filter: blur(20px);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.1);
+    filter: blur(15px);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 4s ease-in-out infinite;
+}
+
+/* Hover effects for title */
+.animate-title-entrance:hover .animated-letter-image {
+  animation-duration: 3s;
+  transform: scale(1.05);
+}
+
+.animate-title-entrance:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+/* PHOTO CAROUSEL SPECIFIC ANIMATIONS */
+
+/* Smooth image transitions */
+.carousel-image {
+  transition: all 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Lightbox animations */
+.lightbox-enter {
+  animation: lightbox-fade-in 0.3s ease-out forwards;
+}
+
+@keyframes lightbox-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Thumbnail hover effects */
+.thumbnail-hover {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.thumbnail-hover:hover {
+  transform: scale(1.05) translateY(-2px);
+  box-shadow: 0 10px 25px rgba(235, 61, 146, 0.3);
+}
+
+/* Progress indicator animations */
+.progress-dot {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.progress-dot.active {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px rgba(235, 61, 146, 0.5);
+}
+
+/* Floating background elements for photos section */
+@keyframes float-bg {
+  0%, 100% { 
+    transform: translateY(0px) translateX(0px) rotate(0deg); 
+    opacity: 0.3;
+  }
+  33% { 
+    transform: translateY(-20px) translateX(10px) rotate(120deg); 
+    opacity: 0.6;
+  }
+  66% { 
+    transform: translateY(-10px) translateX(-5px) rotate(240deg); 
+    opacity: 0.4;
+  }
+}
+
+.animate-float-bg {
+  animation: float-bg 12s ease-in-out infinite;
+}
+
+/* Navigation button hover effects */
+.nav-button {
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backdrop-filter: blur(10px);
+}
+
+.nav-button:hover {
+  transform: scale(1.1);
+  background-color: rgba(235, 61, 146, 0.2);
+  box-shadow: 0 0 20px rgba(235, 61, 146, 0.4);
+}
+
+/* Photo caption animations */
+.photo-caption {
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.photo-caption:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: translateY(-2px);
+}
+
+/* Prevent horizontal overflow on all elements */
+* {
+  box-sizing: border-box;
+}
+
+/* Ensure no elements extend beyond viewport width */
+.container, section, div {
+  max-width: 100%;
+}
+
+/* Fix for progress indicators wrapping */
+.flex-wrap {
+  flex-wrap: wrap;
+}
